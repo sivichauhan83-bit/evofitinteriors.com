@@ -1,0 +1,299 @@
+/* ==========================================================================
+   Evofit Interiors – site styles (Astra header + Elementor homepage)
+   Palette: yellow #F5B800 · charcoal #171717 · white · warm #F7F5F0 · grey #666
+   ========================================================================== */
+:root{
+  --ev-y:#F5B800; --ev-y-d:#D9A300; --ev-k:#171717; --ev-k2:#0f0f0f; --ev-w:#fff;
+  --ev-warm:#F7F5F0; --ev-g:#666; --ev-line:#E7E3DA;
+  --ev-font:Inter,"Manrope","Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+}
+html{scroll-behavior:smooth}
+[id^="hero"],[id^="about"],[id^="services"],[id^="service-"],[id^="projects"],[id^="project-"],[id^="industries"],[id^="industry-"],[id^="process"],[id^="why"],[id^="contact"]{scroll-margin-top:96px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+.evofit-sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ---------- shared section scaffolding ---------- */
+.evofit-section,.evofit-strip,.evofit-hero{font-family:var(--ev-font);color:var(--ev-k)}
+.evofit-section .elementor-widget,.evofit-strip .elementor-widget,.evofit-hero .elementor-widget{margin-bottom:0}
+.evofit-section.e-con,.evofit-strip.e-con{--gap:0px;--row-gap:0px;--column-gap:0px;gap:0}
+.evofit-section p{margin:0 0 1em}
+.evofit-section p:last-child{margin-bottom:0}
+.evofit-warm{background:var(--ev-warm)}
+.evofit-dark{background:var(--ev-k);color:#fff}
+.evofit-dark .evofit-h2 .elementor-heading-title,.evofit-dark .evofit-card-title .elementor-heading-title{color:#fff}
+.evofit-head{display:flex!important;flex-direction:column;gap:14px!important;max-width:760px;margin-bottom:48px;width:100%}
+.evofit-eyebrow{font-size:13px;line-height:1.2;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--ev-k);
+  padding-top:16px;background:linear-gradient(var(--ev-y),var(--ev-y)) 0 0/36px 3px no-repeat}
+.evofit-eyebrow p{margin:0}
+.evofit-dark .evofit-eyebrow{color:#fff}
+.evofit-h2 .elementor-heading-title{font-family:var(--ev-font);font-size:clamp(28px,3.3vw,44px);line-height:1.15;font-weight:700;letter-spacing:-.015em;color:var(--ev-k);margin:0}
+.evofit-lead,.evofit-lead p{font-size:18px;line-height:1.65;color:var(--ev-g)}
+.evofit-dark .evofit-lead,.evofit-dark .evofit-lead p{color:#c9c9c9}
+.evofit-body,.evofit-body p{font-size:17px;line-height:1.75;color:var(--ev-g)}
+.evofit-note{font-size:15px!important;color:var(--ev-k)!important;border-left:3px solid var(--ev-y);padding-left:14px;margin-top:24px!important}
+.evofit-center{display:flex!important;flex-direction:column;align-items:center;margin-top:48px;width:100%}
+
+/* ---------- buttons ---------- */
+.evofit-btn .elementor-button,.evofit-chip .elementor-button,.evofit-link .elementor-button{font-family:var(--ev-font);transition:background-color .25s,color .25s,border-color .25s,transform .25s}
+.evofit-btn .elementor-button{box-sizing:border-box;border-radius:2px!important;padding:16px 30px!important;font-size:15px;font-weight:700;letter-spacing:.02em;line-height:1.2;border:2px solid transparent;text-decoration:none}
+.evofit-btn--yellow .elementor-button{background:var(--ev-y)!important;color:var(--ev-k)!important}
+.evofit-btn--yellow .elementor-button:hover{background:var(--ev-y-d)!important;transform:translateY(-1px)}
+.evofit-btn--ghost .elementor-button{background:transparent!important;color:#fff!important;border-color:rgba(255,255,255,.55)}
+.evofit-btn--ghost .elementor-button:hover{border-color:var(--ev-y);color:var(--ev-y)!important}
+.evofit-btn--dark .elementor-button{background:var(--ev-k)!important;color:#fff!important}
+.evofit-btn--dark .elementor-button:hover{background:var(--ev-y)!important;color:var(--ev-k)!important}
+.evofit-btn--whatsapp .elementor-button{background:transparent!important;color:#fff!important;border-color:var(--ev-y)}
+.evofit-btn--whatsapp .elementor-button:hover{background:var(--ev-y)!important;color:var(--ev-k)!important}
+.evofit-link .elementor-button{background:none!important;color:var(--ev-k)!important;padding:0 0 3px!important;border-radius:0!important;border-bottom:2px solid var(--ev-y);font-size:14px;font-weight:700;letter-spacing:.03em;box-shadow:none!important}
+.evofit-link .elementor-button:hover{color:#000!important;border-bottom-color:var(--ev-k)}
+.evofit-link .elementor-button-text::after{content:" \2192"}
+.evofit-chip .elementor-button{background:#fff!important;color:var(--ev-k)!important;border:1px solid var(--ev-line);border-radius:2px!important;padding:11px 20px!important;font-size:14px;font-weight:600}
+.evofit-chip .elementor-button:hover{border-color:var(--ev-k)}
+.evofit-chip.is-active .elementor-button{background:var(--ev-k)!important;color:#fff!important;border-color:var(--ev-k)}
+.evofit-chips{display:flex!important;flex-direction:row!important;flex-wrap:wrap;gap:10px!important;margin-bottom:36px;width:100%}
+a:focus-visible,.elementor-button:focus-visible,.evofit-form :focus-visible{outline:3px solid var(--ev-y);outline-offset:3px}
+
+/* ---------- A. hero: full banner kept whole, blurred copy fills the sides ---------- */
+.evofit-hero.e-con{--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;--gap:0px;padding:0;position:relative;overflow:hidden;background:#EFE8DD;align-items:center}
+.evofit-hero::before{content:"";position:absolute;inset:-60px;background:var(--evofit-hero-img,none) center/cover no-repeat;filter:blur(34px) saturate(1.08);opacity:.95}
+.evofit-hero .evofit-hero-img{position:relative;z-index:1;width:100%;max-width:none;text-align:center}
+.evofit-hero .evofit-hero-img img{display:block;margin:0 auto;width:auto!important;max-width:100%;height:clamp(560px,calc(100vh - 110px),800px)!important;aspect-ratio:1/1;object-fit:contain;box-shadow:0 0 0 1px rgba(23,23,23,.04)}
+@media (max-width:900px){.evofit-hero .evofit-hero-img img{width:100%!important;height:auto!important}}
+
+/* enquiry call-to-action strip under the hero */
+.evofit-strip.e-con{align-items:center;justify-content:space-between;flex-wrap:wrap}
+.evofit-strip-copy{flex:1 1 420px!important;display:flex!important;flex-direction:column;gap:6px!important;width:auto!important}
+.evofit-strip-title .elementor-heading-title{font-size:clamp(20px,2.2vw,28px);font-weight:700;color:#fff;margin:0;font-family:var(--ev-font)}
+.evofit-strip-text,.evofit-strip-text p{color:#c9c9c9;font-size:16px}
+.evofit-strip-actions{display:flex!important;flex-direction:row!important;flex-wrap:wrap;gap:14px!important;width:auto!important}
+
+/* ---------- B. intro ---------- */
+.evofit-intro{display:flex!important;flex-direction:row!important;gap:72px!important;align-items:center;width:100%}
+.evofit-intro-copy{flex:1 1 52%!important;width:auto!important;display:flex!important;flex-direction:column;gap:18px!important}
+.evofit-pillars{flex:1 1 40%!important;width:auto!important;display:flex!important;flex-direction:column;gap:0!important}
+.evofit-pillar{border-top:1px solid var(--ev-line);padding:26px 0}
+.evofit-pillar:last-child{border-bottom:1px solid var(--ev-line)}
+.evofit-pillar .elementor-icon-box-wrapper{display:flex!important;flex-direction:row!important;gap:22px;align-items:flex-start;text-align:left}
+.evofit-pillar .elementor-icon-box-icon{margin:0!important;flex:0 0 auto}
+.evofit-pillar .elementor-icon,.evofit-why .elementor-icon{width:54px;height:54px;display:inline-flex;align-items:center;justify-content:center;background:var(--ev-y);color:var(--ev-k)!important;font-size:21px!important;border-radius:2px}
+.evofit-pillar .elementor-icon svg,.evofit-why .elementor-icon svg{fill:var(--ev-k);width:21px;height:21px}
+.evofit-pillar .elementor-icon-box-title,.evofit-why .elementor-icon-box-title{font-size:20px;font-weight:700;color:var(--ev-k);margin:0 0 6px;font-family:var(--ev-font)}
+.evofit-pillar .elementor-icon-box-description,.evofit-why .elementor-icon-box-description{font-size:15.5px;line-height:1.6;color:var(--ev-g);margin:0}
+
+/* ---------- grids & cards ---------- */
+.evofit-grid{--display:grid!important;display:grid!important;grid-template-columns:repeat(var(--evc,3),minmax(0,1fr));gap:28px!important;width:100%}
+.evofit-grid--4{--evc:4}.evofit-grid--3{--evc:3}
+@media (max-width:1180px){.evofit-grid--4{--evc:2}}
+@media (max-width:900px){.evofit-grid--3{--evc:2}}
+@media (max-width:600px){.evofit-grid--4,.evofit-grid--3{--evc:1}}
+.evofit-card{display:flex!important;flex-direction:column!important;gap:0!important;background:#fff;border:1px solid var(--ev-line);overflow:hidden;width:auto!important;transition:box-shadow .3s,transform .3s,border-color .3s}
+.evofit-card:hover{box-shadow:0 14px 34px rgba(23,23,23,.10);transform:translateY(-3px);border-color:#d9d4c8}
+.evofit-card-img{overflow:hidden;margin:0}
+.evofit-card-img img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .7s cubic-bezier(.2,.6,.2,1)}
+.evofit-card:hover .evofit-card-img img{transform:scale(1.05)}
+.evofit-card-body{display:flex!important;flex-direction:column;gap:10px!important;padding:24px 24px 28px!important;width:100%!important;align-items:flex-start;flex:1 1 auto}
+.evofit-card-title .elementor-heading-title{font-family:var(--ev-font);font-size:20px;line-height:1.3;font-weight:700;color:var(--ev-k);margin:0}
+.evofit-card-text,.evofit-card-text p{font-size:15px;line-height:1.65;color:var(--ev-g)}
+.evofit-card-text .evofit-loc{font-weight:600;color:var(--ev-k);margin-bottom:6px;font-size:14px}
+.evofit-tag{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--ev-k)}
+.evofit-tag p{margin:0}
+.evofit-card--service .evofit-link{margin-top:auto;padding-top:6px}
+.evofit-card:target{outline:3px solid var(--ev-y);outline-offset:-3px}
+
+/* projects: filter states */
+.evofit-card--project.is-hidden{display:none!important}
+.evofit-projects:not(.is-expanded) .evofit-extra{display:none!important}
+.evofit-projects.is-expanded + .evofit-center{display:none!important}
+
+/* ---------- E. industries: image-led tiles ---------- */
+.evofit-card--industry{position:relative;border:0}
+.evofit-card--industry .evofit-card-img img{aspect-ratio:4/3.2}
+.evofit-card--industry .evofit-card-body{position:absolute;inset:0;justify-content:flex-end;background:linear-gradient(to top,rgba(23,23,23,.92) 0,rgba(23,23,23,.84) 34%,rgba(23,23,23,0) 72%);padding:70px 22px 20px!important;gap:4px!important;transition:background .3s}
+.evofit-card--industry:hover .evofit-card-body{background:linear-gradient(to top,rgba(23,23,23,.96) 0,rgba(23,23,23,.88) 40%,rgba(23,23,23,.1) 80%)}
+.evofit-card--industry .evofit-card-title .elementor-heading-title{color:#fff;font-size:19px}
+.evofit-card--industry .elementor-widget{position:static!important}
+.evofit-card--industry .evofit-card-title a{color:#fff!important;text-decoration:none}
+.evofit-card--industry .evofit-card-title a::after{content:"";position:absolute;inset:0;z-index:3}
+.evofit-card--industry .evofit-card-title a:focus-visible{outline:none}
+.evofit-card--industry:focus-within{outline:3px solid var(--ev-y);outline-offset:-3px}
+.evofit-card--industry .evofit-card-text,.evofit-card--industry .evofit-card-text p{color:#d6d6d6;font-size:14px;line-height:1.5}
+.evofit-card--industry::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--ev-y);transition:width .4s;z-index:2}
+.evofit-card--industry:hover::after{width:100%}
+
+/* ---------- F. process ---------- */
+.evofit-steps{display:flex!important;flex-direction:row!important;gap:28px!important;width:100%;align-items:stretch}
+.evofit-step{flex:1 1 0!important;width:auto!important;display:flex!important;flex-direction:column;gap:12px!important;border-top:3px solid var(--ev-y);padding-top:24px!important}
+.evofit-step-no,.evofit-step-no p{font-size:44px;line-height:1;font-weight:700;color:var(--ev-y);letter-spacing:-.02em}
+.evofit-dark .evofit-step .evofit-card-text,.evofit-dark .evofit-step .evofit-card-text p{color:#c9c9c9}
+@media (max-width:900px){.evofit-steps{flex-direction:column!important;gap:0!important}.evofit-step{border-top:0;border-left:3px solid var(--ev-y);padding:6px 0 28px 22px!important}}
+
+/* ---------- G. why ---------- */
+.evofit-why{padding:6px 0}
+.evofit-why .elementor-icon-box-wrapper{display:flex!important;flex-direction:column;gap:18px;text-align:left}
+.evofit-why .elementor-icon-box-icon{margin:0!important}
+.evofit-quote-wrap{margin-top:64px;width:100%}
+.evofit-quote blockquote{margin:0;border:0;border-left:4px solid var(--ev-y);padding:6px 0 6px 28px;font-size:clamp(20px,2.4vw,28px);line-height:1.45;font-weight:600;color:var(--ev-k);font-style:normal;quotes:none}
+.evofit-cite{margin:16px 0 0 32px!important;font-size:14px;letter-spacing:.04em;color:var(--ev-g)}
+
+/* ---------- H. contact ---------- */
+.evofit-contact-grid{display:flex!important;flex-direction:row!important;gap:64px!important;align-items:flex-start;width:100%}
+.evofit-contact-copy{flex:1 1 42%!important;width:auto!important;display:flex!important;flex-direction:column;gap:22px!important}
+.evofit-form-card{flex:1 1 52%!important;width:auto!important;background:#fff;padding:40px!important;border-top:5px solid var(--ev-y);color:var(--ev-k)}
+.evofit-contact-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.evofit-contact-list li{display:flex;flex-direction:column;gap:2px;color:#d6d6d6;font-size:15.5px;line-height:1.55}
+.evofit-contact-list strong{color:var(--ev-y);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.evofit-contact-list a{color:#fff;text-decoration:none}.evofit-contact-list a:hover{color:var(--ev-y)}
+
+/* enquiry form (rendered by the plugin shortcode) */
+.evofit-form{font-family:var(--ev-font);display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.evofit-form .ef-full{grid-column:1/-1}
+.evofit-form label{display:block;font-size:13px;font-weight:700;letter-spacing:.03em;margin:0 0 6px;color:var(--ev-k)}
+.evofit-form label span{color:#B45309}
+.evofit-form input[type=text],.evofit-form input[type=tel],.evofit-form input[type=email],.evofit-form select,.evofit-form textarea{width:100%;box-sizing:border-box;padding:13px 14px;border:1px solid #cfcabd;border-radius:2px;background:#fff;color:var(--ev-k);font:inherit;font-size:15px;line-height:1.4;box-shadow:none}
+.evofit-form textarea{min-height:120px;resize:vertical}
+.evofit-form input:focus,.evofit-form select:focus,.evofit-form textarea:focus{border-color:var(--ev-k);outline:3px solid rgba(245,184,0,.45);outline-offset:0}
+.evofit-form .ef-actions{display:flex;flex-wrap:wrap;gap:12px}
+.evofit-form button{cursor:pointer;font:inherit;font-weight:700;font-size:15px;padding:15px 28px;border-radius:2px;border:2px solid var(--ev-k);transition:background .25s,color .25s}
+.evofit-form .ef-submit{background:var(--ev-y);border-color:var(--ev-y);color:var(--ev-k)}
+.evofit-form .ef-submit:hover{background:var(--ev-y-d);border-color:var(--ev-y-d)}
+.evofit-form .ef-wa{background:#fff;color:var(--ev-k)}
+.evofit-form .ef-wa:hover{background:var(--ev-k);color:#fff}
+.evofit-form .ef-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.evofit-form-msg{grid-column:1/-1;padding:14px 16px;border-left:4px solid;font-size:15px;line-height:1.5}
+.evofit-form-msg.ok{background:#F1F8EC;border-color:#4C8C2B;color:#244212}
+.evofit-form-msg.err{background:#FDF1EF;border-color:#C0392B;color:#5E1A12}
+.evofit-form .ef-fine{font-size:12.5px;color:var(--ev-g);margin:0}
+@media (max-width:600px){.evofit-form{grid-template-columns:1fr}.evofit-form-card{padding:26px 20px!important}.evofit-form .ef-actions button{width:100%}}
+
+/* ---------- I. footer ---------- */
+.evofit-footer.evofit-dark{background:var(--ev-k2)}
+.evofit-footer-grid{display:grid!important;--display:grid!important;grid-template-columns:1.4fr 1fr 1.1fr 1.3fr;gap:48px!important;width:100%}
+.evofit-footer-col{display:flex!important;flex-direction:column;gap:16px!important;width:auto!important}
+.evofit-footer-logo img{width:190px;max-width:100%;height:auto;display:block}
+.evofit-footer-text,.evofit-footer-text p,.evofit-footer-list li{color:#bdbdbd;font-size:14.5px;line-height:1.7}
+.evofit-footer-h .elementor-heading-title{font-family:var(--ev-font);font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#fff;margin:0;padding-bottom:12px;border-bottom:2px solid var(--ev-y);display:inline-block}
+.evofit-footer-list ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.evofit-footer a,.evofit-footer-list a{color:#bdbdbd;text-decoration:none;transition:color .2s}
+.evofit-footer a:hover{color:var(--ev-y)}
+.evofit-footer-bar{display:flex!important;flex-direction:row!important;justify-content:space-between;flex-wrap:wrap;gap:12px!important;width:100%!important;margin-top:56px;padding-top:24px!important;border-top:1px solid #2b2b2b}
+.evofit-copy,.evofit-copy p{font-size:13.5px;color:#9a9a9a;margin:0}
+@media (max-width:1000px){.evofit-footer-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.evofit-footer-grid{grid-template-columns:1fr;gap:36px!important}}
+
+/* the homepage carries its own footer, hide the theme footer there */
+body.evofit-home .site-footer,body.evofit-home #colophon{display:none}
+
+/* ---------- responsive layout of the two-column blocks ---------- */
+@media (max-width:900px){
+  .evofit-section.e-con{--padding-top:64px;--padding-bottom:64px}
+  .evofit-intro,.evofit-contact-grid{flex-direction:column!important;gap:40px!important}
+  .evofit-intro-copy,.evofit-pillars,.evofit-contact-copy,.evofit-form-card{flex:1 1 auto!important;width:100%!important}
+  .evofit-head{margin-bottom:32px}
+  .evofit-strip.e-con,.evofit-strip.e-con>.e-con-inner{flex-direction:column!important;align-items:stretch!important}
+  .evofit-strip-copy{flex:0 0 auto!important;width:100%!important}
+  .evofit-strip-actions{width:100%!important}
+}
+@media (max-width:600px){
+  .evofit-strip-actions .elementor-widget{width:100%}
+  .evofit-strip-actions .elementor-button{width:100%;justify-content:center;box-sizing:border-box}
+}
+
+/* ==========================================================================
+   Astra header: white bar, black text, yellow accents, dropdowns, CTA button
+   ========================================================================== */
+.ast-primary-header-bar,.main-header-bar,.ast-above-header-bar{background:#fff!important;border-bottom:1px solid var(--ev-line)!important}
+.site-header{position:relative;z-index:9990;box-shadow:0 1px 0 rgba(23,23,23,.02)}
+.site-header .custom-logo-link img,.site-header .site-logo-img img{width:auto;max-height:60px;height:auto}
+.main-header-menu>.menu-item>a,.ast-builder-menu .main-header-menu>.menu-item>a{font-family:var(--ev-font);font-size:15px;font-weight:600;color:var(--ev-k)!important;letter-spacing:.01em;position:relative}
+.main-header-menu>.menu-item:not(.evofit-cta-menu)>a::after{content:"";position:absolute;left:1em;right:1em;bottom:calc(50% - 1.55em);height:2px;background:var(--ev-y);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.main-header-menu>.menu-item:not(.evofit-cta-menu):hover>a::after,.main-header-menu>.menu-item:focus-within>a::after,.main-header-menu>.current-menu-item>a::after{transform:scaleX(1)}
+.main-header-menu>.menu-item>a:hover,.main-header-menu>.menu-item>a:focus-visible{color:var(--ev-k)!important}
+.main-header-menu a:focus-visible{outline:3px solid var(--ev-y);outline-offset:-3px}
+
+/* Get a Quote button (menu item carries class evofit-cta-menu) */
+.main-header-menu>.evofit-cta-menu>a{background:var(--ev-y)!important;color:var(--ev-k)!important;font-weight:700;padding:0 1.5em!important;margin-left:.75em;border-radius:2px;line-height:2.9em!important;transition:background .25s,transform .25s}
+.main-header-menu>.evofit-cta-menu>a:hover,.main-header-menu>.evofit-cta-menu>a:focus-visible{background:var(--ev-y-d)!important;transform:translateY(-1px)}
+
+@media (min-width:922px){
+  /* dropdown panel: no hover gap, no clipping, smooth fade */
+  .main-header-menu .menu-item-has-children{position:relative}
+  .main-header-menu .sub-menu{display:block!important;visibility:hidden;opacity:0;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s;
+    min-width:290px;background:#fff!important;border:1px solid var(--ev-line);border-top:3px solid var(--ev-y);box-shadow:0 18px 40px rgba(23,23,23,.14);padding:8px 0;z-index:9999;top:100%!important;margin:0}
+  .main-header-menu .menu-item-has-children::after{content:"";position:absolute;left:0;right:0;top:100%;height:14px}   /* hover bridge */
+  .main-header-menu .menu-item:hover>.sub-menu,.main-header-menu .menu-item:focus-within>.sub-menu,.main-header-menu .menu-item.ast-menu-hover>.sub-menu{visibility:visible;opacity:1;transform:none;transition:opacity .25s ease,transform .25s ease,visibility 0s}
+  .main-header-menu .sub-menu .menu-item>a{padding:11px 22px!important;font-size:14.5px;font-weight:500;color:var(--ev-k)!important;border:0!important;transition:background .2s,padding-left .2s}
+  .main-header-menu .sub-menu .menu-item>a:hover,.main-header-menu .sub-menu .menu-item>a:focus-visible{background:var(--ev-warm);padding-left:28px!important;box-shadow:inset 3px 0 0 var(--ev-y)}
+}
+
+/* mobile: Astra supplies the hamburger + expandable sub-menus, we only tidy them */
+@media (max-width:921px){
+  .main-header-menu .menu-item>a{color:var(--ev-k)!important;font-weight:600;font-size:16px}
+  .main-header-menu .sub-menu .menu-item>a{font-weight:500;font-size:15px;padding-left:2.2em!important}
+  .main-header-menu>.evofit-cta-menu>a{display:block;text-align:center;margin:14px 20px 18px;line-height:3em!important}
+  .ast-mobile-header-content,.ast-mobile-popup-drawer .ast-mobile-popup-inner{background:#fff}
+}
+
+/* ---------- floating buttons (only output when details are saved) ---------- */
+.evofit-float{position:fixed;right:18px;bottom:18px;z-index:9980;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.evofit-wa-float,.evofit-call-float{display:inline-flex;align-items:center;gap:10px;background:var(--ev-k);color:#fff!important;text-decoration:none;font:700 14px/1 var(--ev-font);padding:14px 18px;border-radius:2px;border-bottom:3px solid var(--ev-y);box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .25s}
+.evofit-wa-float:hover,.evofit-call-float:hover{transform:translateY(-2px);color:#fff}
+.evofit-wa-float svg,.evofit-call-float svg{width:20px;height:20px;fill:var(--ev-y)}
+.evofit-call-float{background:var(--ev-y);color:var(--ev-k)!important;border-bottom-color:var(--ev-k)}
+.evofit-call-float:hover{color:var(--ev-k)!important}
+.evofit-call-float svg{fill:var(--ev-k)}
+@media (min-width:768px){.evofit-call-float{display:none}}
+@media (max-width:600px){.evofit-wa-float span,.evofit-call-float span{display:none}.evofit-wa-float,.evofit-call-float{padding:14px}}
+
+/* ---------- FAQ ---------- */
+.evofit-faq .evofit-head{margin-bottom:36px}
+.evofit-faq-items{max-width:860px;display:flex;flex-direction:column;gap:12px;font-family:var(--ev-font)}
+.evofit-faq-item{background:#fff;border:1px solid var(--ev-line);border-left:4px solid transparent;transition:border-color .25s,box-shadow .25s}
+.evofit-faq-item[open]{border-left-color:var(--ev-y);box-shadow:0 10px 26px rgba(23,23,23,.07)}
+.evofit-faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 24px;font-size:17px;font-weight:700;line-height:1.4;color:var(--ev-k)}
+.evofit-faq-item summary::-webkit-details-marker{display:none}
+.evofit-faq-item summary::after{content:"+";flex:0 0 auto;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;background:var(--ev-y);color:var(--ev-k);font-size:20px;font-weight:700;line-height:1;border-radius:2px;transition:transform .25s}
+.evofit-faq-item[open] summary::after{content:"\2212"}
+.evofit-faq-item summary:focus-visible{outline:3px solid var(--ev-y);outline-offset:-3px}
+.evofit-faq-a{padding:0 24px 22px}
+.evofit-faq-a p{margin:0;font-size:16px;line-height:1.7;color:var(--ev-g)}
+@media (max-width:600px){.evofit-faq-item summary{padding:18px 16px;font-size:16px}.evofit-faq-a{padding:0 16px 20px}}
+
+/* ---------- contact: map, directions, social ---------- */
+.evofit-map-wrap{margin-top:6px}
+.evofit-map{position:relative;width:100%;aspect-ratio:16/8;min-height:220px;background:#2a2a2a;border:1px solid #333;overflow:hidden}
+.evofit-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.25) contrast(1.02)}
+.evofit-directions{display:inline-block;margin-top:12px;color:#fff!important;font:700 14px/1.2 var(--ev-font);letter-spacing:.03em;text-decoration:none;padding-bottom:3px;border-bottom:2px solid var(--ev-y)}
+.evofit-directions::after{content:" \2192"}
+.evofit-directions:hover{color:var(--ev-y)!important}
+.evofit-social{list-style:none;margin:6px 0 0!important;padding:0!important;display:flex;flex-wrap:wrap;gap:10px}
+.evofit-social a{display:inline-block;padding:8px 14px;border:1px solid #3a3a3a;font-size:13px;font-weight:600;letter-spacing:.04em;color:#e5e5e5!important;transition:border-color .2s,color .2s}
+.evofit-social a:hover{border-color:var(--ev-y);color:var(--ev-y)!important}
+
+/* ---------- motion: gentle reveal on scroll (classes added by JavaScript, so no-JS visitors see everything) ---------- */
+.evofit-js .evofit-reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.6,.2,1)}
+.evofit-js .evofit-reveal.is-in{opacity:1;transform:none}
+body.evofit-scrolled .site-header{box-shadow:0 6px 22px rgba(23,23,23,.08)}
+.main-header-menu>.menu-item.evofit-active>a::after{transform:scaleX(1)}
+.evofit-form button[disabled]{opacity:.65;cursor:progress}
+
+/* ---------- project gallery lightbox ---------- */
+.evofit-lb{position:fixed;inset:0;z-index:100000;background:rgba(10,10,10,.97);display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px;font-family:var(--ev-font)}
+.evofit-lb.is-open{display:flex}
+.evofit-lb figure{margin:0;max-width:min(1200px,100%);width:100%;text-align:center}
+.evofit-lb img{max-width:100%;max-height:76vh;width:auto;height:auto;object-fit:contain;display:block;margin:0 auto}
+.evofit-lb figcaption{color:#fff;margin-top:16px;font-size:15px;line-height:1.5}
+.evofit-lb figcaption small{display:block;color:#b8b8b8;margin-top:2px}
+.evofit-lb button{position:absolute;background:var(--ev-k);color:#fff;border:1px solid #444;width:46px;height:46px;font-size:22px;line-height:1;cursor:pointer;border-radius:2px}
+.evofit-lb button:hover,.evofit-lb button:focus-visible{background:var(--ev-y);color:var(--ev-k);border-color:var(--ev-y);outline:none}
+.evofit-lb .lb-close{top:16px;right:16px}.evofit-lb .lb-prev{left:16px;top:50%}.evofit-lb .lb-next{right:16px;top:50%}
+@media (max-width:600px){.evofit-lb .lb-prev,.evofit-lb .lb-next{top:auto;bottom:16px}.evofit-lb .lb-prev{left:calc(50% - 56px)}.evofit-lb .lb-next{right:calc(50% - 56px)}}
+
+.evofit-lb figure{touch-action:pan-y}
+.evofit-lb img{transition:opacity .2s}
+.evofit-lb img.is-loading{opacity:.25}
+.evofit-lb .lb-dots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.evofit-lb .lb-dots button{position:static;width:12px;height:12px;padding:0;border-radius:50%;background:#555;border:0}
+.evofit-lb .lb-dots button.is-on,.evofit-lb .lb-dots button:hover,.evofit-lb .lb-dots button:focus-visible{background:var(--ev-y)}
+.evofit-card--project .evofit-card-img{cursor:zoom-in}
+@media print{.evofit-float,.evofit-lb,.site-header{display:none!important}}
